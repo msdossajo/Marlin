@@ -1750,11 +1750,7 @@
  *
  * View the current statistics with M78.
  */
-<<<<<<< HEAD
 #define PRINTCOUNTER
-=======
-//#define PRINTCOUNTER
->>>>>>> upstream/Ender_3_V2_Extensible_UI
 
 /**
  * Password
