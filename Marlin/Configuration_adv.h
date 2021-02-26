@@ -2056,11 +2056,7 @@
 //#define FWRETRACT
 #if ENABLED(FWRETRACT)
   #define FWRETRACT_AUTORETRACT           // Override slicer retractions
-<<<<<<< HEAD
-  #if ENABLED(FWRETRACT_AUTORETRACT)190
-=======
   #if ENABLED(FWRETRACT_AUTORETRACT)
->>>>>>> upstream/Ender_3_V2_Extensible_UI
     #define MIN_AUTORETRACT 0.1           // (mm) Don't convert E moves under this length
     #define MAX_AUTORETRACT 10.0          // (mm) Don't convert E moves over this length
   #endif
