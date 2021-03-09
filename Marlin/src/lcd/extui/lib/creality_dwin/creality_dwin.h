@@ -36,7 +36,7 @@ enum processID : uint8_t {
 };
 
 enum popupID : uint8_t {
-  Pause, Stop, Resume, SaveLevel, ETemp, Level, Home, MoveWait, Complete, FilLoad, FilChange, UI, TempWarn, Runout, PidBadExtruder, PidTimeout, PidDone
+  Pause, Stop, Resume, SaveLevel, ETemp, Level, Home, MoveWait, Heating, Complete, FilLoad, FilChange, UI, TempWarn, Runout, PidBadExtruder, PidTimeout, PidDone
 };
 
 enum menuID : uint8_t {
@@ -62,8 +62,14 @@ enum menuID : uint8_t {
       Advanced,
       Info,
     ManualMesh,
+    UBL,
+      UBLView,
+      MeshViewer,
+      UBLSettings,
+      UBLManual,
     InfoMain,
-  Tune
+  Tune,
+  PreheatHotend
 };
 
 
@@ -244,6 +250,11 @@ public:
   void Draw_Popup(const char *line1, const char *line2, const char *line3, uint8_t mode, uint8_t icon=0);
   void Popup_Select();
   void Update_Status_Bar();
+
+  #if ENABLED(AUTO_BED_LEVELING_UBL)
+    void Draw_Bed_Mesh(int16_t selected = -1, uint8_t gridline_width = 1, uint16_t padding_x = 8, uint16_t padding_y_top = 40 + 53 - 7);
+    void Set_Mesh_Viewer_Status();
+  #endif
 
 
   char* Get_Menu_Title(uint8_t menu);
